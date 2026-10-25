@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# Служебные и технические пути (закрыты от индексации)
+Disallow: /api/
+Disallow: /admin/
+Disallow: /*?utm_
+Disallow: /*?fbclid=
+Disallow: /*?gclid=
+
+# Яндекс
+User-agent: Yandex
+Allow: /
+Clean-param: utm_source&utm_medium&utm_campaign&utm_term&utm_content&fbclid&gclid
+
+# Google
+User-agent: Googlebot
+Allow: /

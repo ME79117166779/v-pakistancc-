@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="yandex-verification" content="6f02da671e2bc099" />
+<title>v-pakistan</title>
+<meta name="description" content="v-pakistan — культура Пакистана без стереотипов: еда, крикет, музыка, урду, города, рецепты.">
+<meta property="og:title" content="v-pakistan">
+<meta property="og:description" content="Культура Пакистана без стереотипов.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://v-pakistan.site">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇵🇰</text></svg>">
+<style>
+  :root{
+    --green:#01411C;--green-light:#0a6b30;--green-dark:#01230f;
+    --gold:#c9a227;--cream:#f7f4ec;--white:#fff;
+    --ink:#1a1a1a;--muted:#5c5c5c;--radius:16px;
+    --shadow:0 4px 18px rgba(0,0,0,.06);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;color:var(--ink);background:var(--cream);line-height:1.65}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+
+  header{position:sticky;top:0;z-index:100;background:rgba(1,65,28,.97);backdrop-filter:blur(8px);color:#fff}
+  .nav{max-width:1150px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:12px 20px;gap:16px}
+  .logo{display:flex;align-items:center;gap:8px;font-weight:800;font-size:1.05rem;white-space:nowrap;cursor:pointer}
+  .logo .star{color:var(--gold);font-size:1.25rem}
+  .nav-links{display:flex;gap:16px;font-size:.88rem;flex-wrap:wrap}
+  .nav-links a{opacity:.9;transition:opacity .2s;cursor:pointer}
+  .nav-links a:hover{opacity:1;text-decoration:underline;text-underline-offset:4px}
+  .nav-links a.active{color:var(--gold);font-weight:700}
+  .lang-switch{display:flex;gap:6px;background:rgba(255,255,255,.12);padding:4px;border-radius:999px}
+  .lang-switch button{background:transparent;border:0;color:#fff;font-weight:700;font-size:.85rem;padding:6px 12px;border-radius:999px;cursor:pointer;transition:background .2s}
+  .lang-switch button.active{background:var(--gold);color:#1a1a1a}
+  .burger{display:none;background:none;border:0;color:#fff;font-size:1.6rem;cursor:pointer}
+
+  .hero{background:radial-gradient(circle at 80% 20%,rgba(201,162,39,.25),transparent 45%),linear-gradient(135deg,var(--green) 0%,#023a1a 60%,var(--green-dark) 100%);color:#fff;padding:80px 20px 90px;text-align:center;position:relative;overflow:hidden}
+  .hero::after{content:"☪";position:absolute;right:-40px;bottom:-70px;font-size:300px;opacity:.06;line-height:1}
+  .hero h1{font-size:clamp(1.9rem,5vw,3.2rem);line-height:1.15;max-width:860px;margin:0 auto 18px;font-weight:800}
+  .hero h1 span{color:var(--gold)}
+  .hero p{max-width:680px;margin:0 auto 32px;font-size:clamp(1rem,2vw,1.15rem);opacity:.92}
+  .btn{display:inline-block;padding:14px 30px;border-radius:999px;font-weight:700;font-size:1rem;transition:transform .15s,box-shadow .15s,background .2s;cursor:pointer;border:0}
+  .btn-gold{background:var(--gold);color:#1a1a1a}
+  .btn-gold:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(201,162,39,.35)}
+  .btn-outline{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.6);margin-left:10px}
+  .btn-outline:hover{background:rgba(255,255,255,.12)}
+
+  .page-hero{background:linear-gradient(135deg,var(--green) 0%,var(--green-dark) 100%);color:#fff;padding:56px 20px;text-align:center}
+  .page-hero h1{font-size:clamp(1.6rem,4vw,2.6rem);margin-bottom:10px}
+  .page-hero p{opacity:.85;max-width:640px;margin:0 auto}
+
+  section{padding:60px 20px}
+  .container{max-width:1150px;margin:0 auto}
+  .section-title{font-size:clamp(1.5rem,3.5vw,2.2rem);text-align:center;margin-bottom:12px;font-weight:800;color:var(--green)}
+  .section-sub{text-align:center;color:var(--muted);max-width:680px;margin:0 auto 40px;font-size:1rem}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+  .card{background:var(--white);border-radius:var(--radius);padding:28px 24px;box-shadow:var(--shadow);border-top:4px solid var(--green);transition:transform .2s,box-shadow .2s;cursor:pointer;display:block}
+  .card:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(0,0,0,.1)}
+  .card .icon{font-size:2rem;margin-bottom:12px}
+  .card h3{font-size:1.15rem;margin-bottom:8px;color:var(--green)}
+  .card p{color:var(--muted);font-size:.95rem}
+
+  .facts{background:var(--green);color:#fff}
+  .facts .section-title{color:#fff}
+  .facts .section-sub{color:rgba(255,255,255,.78)}
+  .fact{background:rgba(255,255,255,.08);border-radius:var(--radius);padding:24px;text-align:center;border:1px solid rgba(255,255,255,.12)}
+  .fact .num{font-size:2.1rem;font-weight:800;color:var(--gold);line-height:1;margin-bottom:8px}
+  .fact p{font-size:.92rem;opacity:.9}
+
+  .culture-block{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center;margin-bottom:56px}
+  .culture-block:nth-child(even) .culture-text{order:2}
+  .culture-text h3{font-size:1.5rem;color:var(--green);margin-bottom:14px}
+  .culture-text p{color:var(--muted);margin-bottom:12px}
+  .culture-text ul{margin-left:20px;color:var(--muted);font-size:.95rem}
+  .culture-text li{margin-bottom:6px}
+  .culture-visual{background:linear-gradient(135deg,var(--green-light),var(--green));border-radius:var(--radius);min-height:260px;display:flex;align-items:center;justify-content:center;font-size:5rem;color:rgba(255,255,255,.9);box-shadow:var(--shadow)}
+
+  .city-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+  .city{background:var(--white);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);border-left:5px solid var(--gold)}
+  .city h4{color:var(--green);margin-bottom:8px;font-size:1.1rem}
+  .city p{color:var(--muted);font-size:.93rem}
+
+  .phrase-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+  .phrase{background:var(--white);border-radius:12px;padding:18px 20px;box-shadow:var(--shadow);display:flex;justify-content:space-between;align-items:center;gap:12px}
+  .phrase .ru{font-weight:600}
+  .phrase .urdu{color:var(--green);font-weight:700;font-size:1.1rem}
+
+  .faq-item{background:var(--white);border-radius:12px;margin-bottom:12px;box-shadow:var(--shadow);overflow:hidden}
+  .faq-q{padding:18px 22px;font-weight:700;cursor:pointer;display:flex;justify-content:space-between;align-items:center;color:var(--green)}
+  .faq-q::after{content:"+";font-size:1.4rem;color:var(--gold);transition:transform .2s}
+  .faq-item.open .faq-q::after{transform:rotate(45deg)}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 22px;color:var(--muted)}
+  .faq-item.open .faq-a{max-height:300px;padding:0 22px 18px}
+
+  .post{background:var(--white);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);margin-bottom:16px;border-left:5px solid var(--green)}
+  .post h3{color:var(--green);margin-bottom:6px}
+  .post .meta{color:var(--muted);font-size:.85rem;margin-bottom:10px}
+  .post p{color:var(--muted);font-size:.95rem}
+
+  .recipe-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+  .recipe{background:var(--white);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);border-top:4px solid var(--gold)}
+  .recipe h3{color:var(--green);margin-bottom:10px}
+  .recipe .ing{color:var(--muted);font-size:.9rem}
+  .recipe .ing b{color:var(--ink)}
+
+  .ad-slot{background:rgba(1,65,28,.05);border:1px dashed var(--green);border-radius:12px;padding:20px;text-align:center;color:var(--muted);font-size:.85rem;margin:24px auto;max-width:1150px}
+
+  footer{background:var(--green-dark);color:rgba(255,255,255,.72);text-align:center;padding:36px 20px;font-size:.9rem}
+  footer .star{color:var(--gold)}
+
+  [data-lang]{display:none}
+  html[lang="ru"] [data-lang="ru"]{display:revert}
+  html[lang="en"] [data-lang="en"]{display:revert}
+  span[data-lang]{display:none}
+  html[lang="ru"] span[data-lang="ru"]{display:inline}
+  html[lang="en"] span[data-lang="en"]{display:inline}
+
+  .page{display:none}
+  .page.active{display:block}
+
+  @media (max-width:820px){
+    .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--green);flex-direction:column;padding:20px;gap:14px}
+    .nav-links.open{display:flex}
+    .burger{display:block}
+    .culture-block{grid-template-columns:1fr}
+    .culture-block:nth-child(even) .culture-text{order:0}
+    .btn-outline{margin-left:0;margin-top:10px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a class="logo" href="#home"><span class="star">★</span> v-pakistan</a>
+    <button class="burger" aria-label="Menu">☰</button>
+    <div class="nav-links">
+      <a href="#about"><span data-lang="ru">О проекте</span><span data-lang="en">About</span></a>
+      <a href="#culture"><span data-lang="ru">Культура</span><span data-lang="en">Culture</span></a>
+      <a href="#cities"><span data-lang="ru">Города</span><span data-lang="en">Cities</span></a>
+      <a href="#language"><span data-lang="ru">Урду</span><span data-lang="en">Urdu</span></a>
+      <a href="#facts"><span data-lang="ru">Факты</span><span data-lang="en">Facts</span></a>
+      <a href="#recipes"><span data-lang="ru">Рецепты</span><span data-lang="en">Recipes</span></a>
+      <a href="#blog"><span data-lang="ru">Блог</span><span data-lang="en">Blog</span></a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="lang-switch">
+      <button id="btn-ru" class="active" onclick="setLang('ru')">RU</button>
+      <button id="btn-en" onclick="setLang('en')">EN</button>
+    </div>
+  </nav>
+</header>
+
+<!-- ================= HOME ================= -->
+<main id="page-home" class="page active">
+  <section class="hero">
+    <h1><span data-lang="ru">Пакистан — это не то, что ты <span style="color:var(--gold)">думаешь</span></span><span data-lang="en">Pakistan is not what you <span style="color:var(--gold)">think</span></span></h1>
+    <p><span data-lang="ru">Просветительский проект о культуре Пакистана: еда, крикет, музыка, урду, свадьбы, города и рецепты. Без стереотипов и политики.</span><span data-lang="en">An educational project about Pakistani culture: food, cricket, music, Urdu, weddings, cities and recipes. No stereotypes, no politics.</span></p>
+    <a class="btn btn-gold" href="#culture"><span data-lang="ru">Узнать больше</span><span data-lang="en">Learn more</span></a>
+  </section>
+  <section>
+    <div class="container">
+      <h2 class="section-title"><span data-lang="ru">Разделы</span><span data-lang="en">Sections</span></h2>
+      <div class="grid">
+        <a class="card" href="#culture"><div class="icon">🍛</div><h3><span data-lang="ru">Культура</span><span data-lang="en">Culture</span></h3><p><span data-lang="ru">Еда, крикет, музыка, урду, свадьбы.</span><span data-lang="en">Food, cricket, music, Urdu, weddings.</span></p></a>
+        <a class="card" href="#cities"><div class="icon">🏙️</div><h3><span data-lang="ru">Города</span><span data-lang="en">Cities</span></h3><p><span data-lang="ru">Карачи, Лахор, Исламабад и другие.</span><span data-lang="en">Karachi, Lahore, Islamabad and more.</span></p></a>
+        <a class="card" href="#language"><div class="icon">🗣️</div><h3><span data-lang="ru">Урду</span><span data-lang="en">Urdu</span></h3><p><span data-lang="ru">Фразы за 5 минут.</span><span data-lang="en">Phrases in 5 minutes.</span></p></a>
+        <a class="card" href="#facts"><div class="icon">📊</div><h3><span data-lang="ru">Факты</span><span data-lang="en">Facts</span></h3><p><span data-lang="ru">Цифры, которые удивляют.</span><span data-lang="en">Numbers that surprise.</span></p></a>
+        <a class="card" href="#recipes"><div class="icon">🥘</div><h3><span data-lang="ru">Рецепты</span><span data-lang="en">Recipes</span></h3><p><span data-lang="ru">Бирияни, чай масала, самоса.</span><span data-lang="en">Biryani, masala chai, samosa.</span></p></a>
+        <a class="card" href="#blog"><div class="icon">📝</div><h3><span data-lang="ru">Блог</span><span data-lang="en">Blog</span></h3><p><span data-lang="ru">Статьи о культуре.</span><span data-lang="en">Articles about culture.</span></p></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ================= ABOUT ================= -->
+<main id="page-about" class="page">
+  <section class="page-hero">
+    <h1><span data-lang="ru">О проекте</span><span data-lang="en">About the project</span></h1>
+    <p><span data-lang="ru">Мост между русской молодёжью и культурой Пакистана.</span><span data-lang="en">A bridge between Russian youth and Pakistani culture.</span></p>
+  </section>
+  <section>
+    <div class="container">
+      <p class="section-sub" style="margin-bottom:40px"><span data-lang="ru">v-pakistan рассказывает о стране, о которой все слышали, но мало кто знает. Фокус — культура, еда, спорт, музыка, язык и быт. Без политики и экзотизации.</span><span data-lang="en">v-pakistan talks about a country everyone has heard of, but few really know. Focus: culture, food, sport, music, language and daily life. No politics, no exoticizing.</span></p>
+      <div class="grid">
+        <div class="card"><div class="icon">🎯</div><h3><span data-lang="ru">Миссия</span><span data-lang="en">Mission</span></h3><p><span data-lang="ru">Разрушать стереотипы и показывать живую культуру Пакистана.</span><span data-lang="en">Break stereotypes and show the living culture of Pakistan.</span></p></div>
+        <div class="card"><div class="icon">🤝</div><h3><span data-lang="ru">Подход</span><span data-lang="en">Approach</span></h3><p><span data-lang="ru">Уважение к культуре, опора на пакистанских друзей и студентов.</span><span data-lang="en">Respect for culture, reliance on Pakistani friends and students.</span></p></div>
+        <div class="card"><div class="icon">🌍</div><h3><span data-lang="ru">Аудитория</span><span data-lang="en">Audience</span></h3><p><span data-lang="ru">Русская молодёжь: студенты, геймеры, путешественники, любители Востока.</span><span data-lang="en">Russian youth: students, gamers, travelers, fans of the East.</span></p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ================= CULTURE ================= -->
+<main id="page-culture" class="page">
+  <section class="page-hero">
+    <h1><span data-lang="ru">Культура Пакистана</span><span data-lang="en">Pakistani culture</span></h1>
+    <p><span data-lang="ru">Пять дверей в культуру — начни с того, что ближе.</span><span data-lang="en">Five doors into the culture.</span></p>
+  </section>
+  <section>
+    <div class="container">
+      <div class="culture-block">
+        <div class="culture-text"><h3>🍛 <span data-lang="ru">Еда</span><span data-lang="en">Food</span></h3><p><span data-lang="ru">Пакистанская кухня — пряная, сытная и очень домашняя.</span><span data-lang="en">Pakistani cuisine is spicy, hearty and homely.</span></p><ul><li><b>Бирияни</b> — <span data-lang="ru">ароматный рис с мясом</span><span data-lang="en">fragrant rice with meat</span></li><li><b>Чай масала</b> — <span data-lang="ru">чай с молоком и пряностями</span><span data-lang="en">tea with milk and spices</span></li><li><b>Самоса</b> — <span data-lang="ru">треугольные пирожки</span><span data-lang="en">triangular pastries</span></li></ul></div>
+        <div class="culture-visual">🍛</div>
+      </div>
+      <div class="culture-block">
+        <div class="culture-text"><h3>🏏 <span data-lang="ru">Крикет</span><span data-lang="en">Cricket</span></h3><p><span data-lang="ru">Крикет — главный культурный код Пакистана.</span><span data-lang="en">Cricket is Pakistan's main cultural code.</span></p><ul><li><span data-lang="ru">Правила простые: мяч, бита, две команды</span><span data-lang="en">Simple rules: ball, bat, two teams</span></li><li><span data-lang="ru">Пакистан — одна из сильнейших сборных мира</span><span data-lang="en">Pakistan is one of the strongest teams</span></li></ul></div>
+        <div class="culture-visual">🏏</div>
+      </div>
+      <div class="culture-block">
+        <div class="culture-text"><h3>🎵 <span data-lang="ru">Музыка</span><span data-lang="en">Music</span></h3><p><span data-lang="ru">От мистических ритмов каввали до современного попа.</span><span data-lang="en">From mystical qawwali to modern pop.</span></p><ul><li><b>Каввали</b> — <span data-lang="ru">духовная музыка</span><span data-lang="en">devotional music</span></li><li><b>Газели</b> — <span data-lang="ru">поэтические песни о любви</span><span data-lang="en">poetic songs about love</span></li></ul></div>
+        <div class="culture-visual">🎵</div>
+      </div>
+      <div class="culture-block">
+        <div class="culture-text"><h3>🗣️ <span data-lang="ru">Урду</span><span data-lang="en">Urdu</span></h3><p><span data-lang="ru">Урду — язык поэзии и вежливости.</span><span data-lang="en">Urdu is the language of poetry and politeness.</span></p></div>
+        <div class="culture-visual">🗣️</div>
+      </div>
+      <div class="culture-block">
+        <div class="culture-text"><h3>💍 <span data-lang="ru">Свадьбы</span><span data-lang="en">Weddings</span></h3><p><span data-lang="ru">Несколько дней музыки, танцев и ярких нарядов.</span><span data-lang="en">Several days of music, dance and bright outfits.</span></p><ul><li><b>Менди</b> — <span data-lang="ru">вечер хны</span><span data-lang="en">henna evening</span></li><li><b>Барат</b> — <span data-lang="ru">процессия жениха</span><span data-lang="en">groom's procession</span></li><li><b>Вальима</b> — <span data-lang="ru">свадебный пир</span><span data-lang="en">wedding feast</span></li></ul></div>
+        <div class="culture-visual">💍</div>
+      </div>
+    </div>
+  </section>
+  <div class="ad-slot"><span data-lang="ru">Здесь будет реклама (Яндекс.РСЯ) — после набора трафика</span><span data-lang="en">Ad slot (Yandex) — after traffic grows</span></div>
+</main>
+
+<!-- ================= CITIES ================= -->
+<main id="page-cities" class="page">
+  <section class="page-hero"><h1><span data-lang="ru">Города Пакистана</span><span data-lang="en">Cities of Pakistan</span></h1><p><span data-lang="ru">Каждый город — свой характер.</span><span data-lang="en">Each city has its own character.</span></p></section>
+  <section>
+    <div class="container">
+      <div class="city-grid">
+        <div class="city"><h4>Karachi</h4><p><span data-lang="ru">Крупнейший город, экономическая столица, порт и родина уличной еды.</span><span data-lang="en">Largest city, economic capital, port and home of street food.</span></p></div>
+        <div class="city"><h4>Lahore</h4><p><span data-lang="ru">Культурное сердце: музыка, поэзия, могольская архитектура.</span><span data-lang="en">Cultural heart: music, poetry, Mughal architecture.</span></p></div>
+        <div class="city"><h4>Islamabad</h4><p><span data-lang="ru">Столица, зелёный город у подножия гор Маргалла.</span><span data-lang="en">Capital, green city at the foot of the Margalla Hills.</span></p></div>
+        <div class="city"><h4>Peshawar</h4><p><span data-lang="ru">Древний город на Шёлковом пути.</span><span data-lang="en">Ancient city on the Silk Road.</span></p></div>
+        <div class="city"><h4>Quetta</h4><p><span data-lang="ru">Город фруктов и гор в Белуджистане.</span><span data-lang="en">City of fruits and mountains in Balochistan.</span></p></div>
+        <div class="city"><h4>Multan</h4><p><span data-lang="ru">Город святынь и гончарного мастерства.</span><span data-lang="en">City of shrines and pottery.</span></p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ================= LANGUAGE ================= -->
+<main id="page-language" class="page">
+  <section class="page-hero"><h1><span data-lang="ru">Урду за 5 минут</span><span data-lang="en">Urdu in 5 minutes</span></h1><p><span data-lang="ru">Несколько фраз, которые растопят лёд.</span><span data-lang="en">A few phrases that will break the ice.</span></p></section>
+  <section>
+    <div class="container">
+      <div class="phrase-list">
+        <div class="phrase"><span class="ru"><span data-lang="ru">Привет</span><span data-lang="en">Hello</span></span><span class="urdu">السلام علیکم</span></div>
+        <div class="phrase"><span class="ru"><span data-lang="ru">Спасибо</span><span data-lang="en">Thank you</span></span><span class="urdu">شکریہ</span></div>
+        <div class="phrase"><span class="ru"><span data-lang="ru">Как дела?</span><span data-lang="en">How are you?</span></span><span class="urdu">آپ کیسے ہیں؟</span></div>
+        <div class="phrase"><span class="ru"><span data-lang="ru">Да</span><span data-lang="en">Yes</span></span><span class="urdu">جی ہاں</span></div>
+        <div class="phrase"><span class="ru"><span data-lang="ru">Нет</span><span data-lang="en">No</span></span><span class="urdu">نہیں</span></div>
+        <div class="phrase"><span class="ru"><span data-lang="ru">Очень вкусно</span><span data-lang="en">Very tasty</span></span><span class="urdu">بہت مزیدار</span></div>
+        <div class="phrase"><span class="ru"><span data-lang="ru">До свидания</span><span data-lang="en">Goodbye</span></span><span class="urdu">خدا حافظ</span></div>
+        <div class="phrase"><span class="ru"><span data-lang="ru">Добро пожаловать</span><span data-lang="en">Welcome</span></span><span class="urdu">خوش آمدید</span></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ================= FACTS ================= -->
+<main id="page-facts" class="page">
+  <section class="page-hero"><h1><span data-lang="ru">Факты, которые удивляют</span><span data-lang="en">Facts that surprise</span></h1><p><span data-lang="ru">Коротко о том, что стоит знать.</span><span data-lang="en">A quick brief.</span></p></section>
+  <section class="facts" style="padding-top:20px">
+    <div class="container">
+      <div class="grid">
+        <div class="fact"><div class="num">240M+</div><p><span data-lang="ru">население — 5-е место в мире</span><span data-lang="en">population — 5th in the world</span></p></div>
+        <div class="fact"><div class="num">60%</div><p><span data-lang="ru">молодёжь до 30 лет</span><span data-lang="en">youth under 30</span></p></div>
+        <div class="fact"><div class="num">#1</div><p><span data-lang="ru">по числу игроков в крикет</span><span data-lang="en">by number of cricket players</span></p></div>
+        <div class="fact"><div class="num">K2</div><p><span data-lang="ru">вторая по высоте гора планеты</span><span data-lang="en">second highest mountain on Earth</span></p></div>
+        <div class="fact"><div class="num">Урду</div><p><span data-lang="ru">и английский — государственные языки</span><span data-lang="en">and English are official languages</span></p></div>
+        <div class="fact"><div class="num">Фриланс</div><p><span data-lang="ru">топ-5 стран по числу фрилансеров</span><span data-lang="en">top-5 country by freelancers</span></p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ================= RECIPES ================= -->
+<main id="page-recipes" class="page">
+  <section class="page-hero"><h1><span data-lang="ru">Рецепты Пакистана</span><span data-lang="en">Pakistani recipes</span></h1><p><span data-lang="ru">Просто, доступно, вкусно — из продуктов, которые есть в России.</span><span data-lang="en">Simple, accessible, tasty — with ingredients available in Russia.</span></p></section>
+  <section>
+    <div class="container">
+      <div class="recipe-grid">
+        <div class="recipe">
+          <h3>🍚 <span data-lang="ru">Бирияни</span><span data-lang="en">Biryani</span></h3>
+          <p class="ing"><b><span data-lang="ru">Ингредиенты:</span><span data-lang="en">Ingredients:</span></b> <span data-lang="ru">рис басмати, курица, лук, йогурт, специи (куркума, кардамон, гвоздика), шафран.</span><span data-lang="en">basmati rice, chicken, onion, yogurt, spices (turmeric, cardamom, cloves), saffron.</span></p>
+          <p class="ing" style="margin-top:10px"><b><span data-lang="ru">Как:</span><span data-lang="en">How:</span></b> <span data-lang="ru">обжарь лук, добавь курицу и специи, туши с йогуртом. Отдельно свари рис, слоями соедини с мясом, добавь шафран и потоми 20 минут.</span><span data-lang="en">fry onion, add chicken and spices, simmer with yogurt. Boil rice separately, layer with meat, add saffron and steam for 20 minutes.</span></p>
+        </div>
+        <div class="recipe">
+          <h3>☕ <span data-lang="ru">Чай масала</span><span data-lang="en">Masala chai</span></h3>
+          <p class="ing"><b><span data-lang="ru">Ингредиенты:</span><span data-lang="en">Ingredients:</span></b> <span data-lang="ru">чёрный чай, молоко, сахар, кардамон, гвоздика, корица, имбирь.</span><span data-lang="en">black tea, milk, sugar, cardamom, cloves, cinnamon, ginger.</span></p>
+          <p class="ing" style="margin-top:10px"><b><span data-lang="ru">Как:</span><span data-lang="en">How:</span></b> <span data-lang="ru">вскипяти воду со специями, добавь чай, через 2 минуты — молоко и сахар, доведи до кипения и процеди.</span><span data-lang="en">boil water with spices, add tea, after 2 minutes add milk and sugar, bring to boil and strain.</span></p>
+        </div>
+        <div class="recipe">
+          <h3>🥟 <span data-lang="ru">Самоса</span><span data-lang="en">Samosa</span></h3>
+          <p class="ing"><b><span data-lang="ru">Ингредиенты:</span><span data-lang="en">Ingredients:</span></b> <span data-lang="ru">мука, картофель, горошек, специи (кумин, кориандр), масло для фритюра.</span><span data-lang="en">flour, potato, peas, spices (cumin, coriander), frying oil.</span></p>
+          <p class="ing" style="margin-top:10px"><b><span data-lang="ru">Как:</span><span data-lang="en">How:</span></b> <span data-lang="ru">замеси тесто, сделай начинку из пюре с горошком и специями, слепи треугольники и обжарь во фритюре.</span><span data-lang="en">make dough, prepare filling from mashed potato with peas and spices, shape triangles and deep-fry.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="ad-slot"><span data-lang="ru">Здесь будет партнёрская ссылка (специи, чай, книги) — после набора трафика</span><span data-lang="en">Affiliate slot (spices, tea, books) — after traffic grows</span></div>
+</main>
+
+<!-- ================= BLOG ================= -->
+<main id="page-blog" class="page">
+  <section class="page-hero"><h1><span data-lang="ru">Блог</span><span data-lang="en">Blog</span></h1><p><span data-lang="ru">Статьи о культуре Пакистана.</span><span data-lang="en">Articles about Pakistani culture.</span></p></section>
+  <section>
+    <div class="container" style="max-width:820px">
+      <div class="post">
+        <h3><span data-lang="ru">Что такое каввали и почему это стоит услышать</span><span data-lang="en">What is qawwali and why you should hear it</span></h3>
+        <div class="meta"><span data-lang="ru">Культура · 5 мин чтения</span><span data-lang="en">Culture · 5 min read</span></div>
+        <p><span data-lang="ru">Каввали — духовная музыка суфиев, известная на весь мир благодаря Нусрату Фатеху Али Хану. Разбираем, откуда она взялась и как её слушать.</span><span data-lang="en">Qawwali is Sufi devotional music, known worldwide thanks to Nusrat Fateh Ali Khan. We explain where it comes from and how to listen.</span></p>
+      </div>
+      <div class="post">
+        <h3><span data-lang="ru">Крикет за 5 минут: правила для новичка</span><span data-lang="en">Cricket in 5 minutes: rules for beginners</span></h3>
+        <div class="meta"><span data-lang="ru">Спорт · 4 мин чтения</span><span data-lang="en">Sport · 4 min read</span></div>
+        <p><span data-lang="ru">Мяч, бита, две команды — и всё не так сложно, как кажется. Объясняем базовые правила и почему Пакистан болеет за крикет всей страной.</span><span data-lang="en">Ball, bat, two teams — and it's not as hard as it seems. We explain the basics and why Pakistan loves cricket so much.</span></p>
+      </div>
+      <div class="post">
+        <h3><span data-lang="ru">10 блюд Пакистана, которые стоит попробовать</span><span data-lang="en">10 Pakistani dishes worth trying</span></h3>
+        <div class="meta"><span data-lang="ru">Еда · 6 мин чтения</span><span data-lang="en">Food · 6 min read</span></div>
+        <p><span data-lang="ru">От бирияни до халвы: гид по пакистанской кухне для тех, кто хочет понять страну через вкус.</span><span data-lang="en">From biryani to halwa: a guide to Pakistani cuisine for those who want to understand the country through taste.</span></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ================= FAQ ================= -->
+<main id="page-faq" class="page">
+  <section class="page-hero"><h1><span data-lang="ru">Частые вопросы</span><span data-lang="en">FAQ</span></h1></section>
+  <section>
+    <div class="container" style="max-width:820px">
+      <div class="faq-item">
+        <div class="faq-q"><span data-lang="ru">Это политический проект?</span><span data-lang="en">Is this a political project?</span></div>
+        <div class="faq-a"><span data-lang="ru">Нет. Мы говорим только о культуре: еде, музыке, спорте, языке, быте. Политика и религия — вне фокуса.</span><span data-lang="en">No. We talk only about culture: food, music, sport, language, daily life. Politics and religion are out of focus.</span></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span data-lang="ru">Кто вы?</span><span data-lang="en">Who are you?</span></div>
+        <div class="faq-a"><span data-lang="ru">Энтузиасты, студенты и друзья из России и Пакистана.</span><span data-lang="en">Enthusiasts, students and friends from Russia and Pakistan.</span></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span data-lang="ru">Можно ли использовать материалы?</span><span data-lang="en">Can I use the materials?</span></div>
+        <div class="faq-a"><span data-lang="ru">Да, с указанием источника и без искажения смысла. Для коммерческого использования — напиши нам.</span><span data-lang="en">Yes, with attribution and without distorting the meaning. For commercial use, contact us.</span></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span class="star">★</span>
+  <span data-lang="ru">v-pakistan — просветительский проект. Без политики.</span>
+  <span data-lang="en">v-pakistan — an educational project. No politics.</span>
+  <br><small>© <span id="year"></span> v-pakistan</small>
+</footer>
+
+<script>
+  // ===== РОУТИНГ ЧЕРЕЗ # =====
+  const pages = ['home','about','culture','cities','language','facts','recipes','blog','faq'];
+  const titles = {
+    home:'v-pakistan',
+    about:'О проекте — v-pakistan',
+    culture:'Культура — v-pakistan',
+    cities:'Города — v-pakistan',
+    language:'Урду — v-pakistan',
+    facts:'Факты — v-pakistan',
+    recipes:'Рецепты — v-pakistan',
+    blog:'Блог — v-pakistan',
+    faq:'FAQ — v-pakistan'
+  };
+
+  function showPage(page){
+    if(!pages.includes(page)) page = 'home';
+    document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+    const el = document.getElementById('page-'+page);
+    if(el) el.classList.add('active');
+    document.querySelectorAll('.nav-links a').forEach(a=>{
+      const href = a.getAttribute('href') || '';
+      a.classList.toggle('active', href === '#'+page);
+    });
+    document.title = titles[page] || 'v-pakistan';
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+
+  function currentPage(){
+    const hash = location.hash.replace('#','');
+    return pages.includes(hash) ? hash : 'home';
+  }
+
+  window.addEventListener('hashchange', function(){
+    showPage(currentPage());
+  });
+
+  showPage(currentPage());
+
+  // ===== ЯЗЫК =====
+  function setLang(lang){
+    document.documentElement.lang = lang;
+    document.getElementById('btn-ru').classList.toggle('active', lang==='ru');
+    document.getElementById('btn-en').classList.toggle('active', lang==='en');
+    try{ localStorage.setItem('lang', lang); }catch(e){}
+  }
+  try{
+    const saved = localStorage.getItem('lang');
+    if(saved) setLang(saved);
+  }catch(e){}
+
+  // ===== МОБИЛЬНОЕ МЕНЮ =====
+  document.querySelector('.burger').addEventListener('click', function(){
+    document.querySelector('.nav-links').classList.toggle('open');
+  });
+  document.querySelectorAll('.nav-links a').forEach(a=>{
+    a.addEventListener('click', function(){
+      document.querySelector('.nav-links').classList.remove('open');
+    });
+  });
+
+  // ===== FAQ АККОРДЕОН =====
+  document.addEventListener('click', function(e){
+    const q = e.target.closest('.faq-q');
+    if(q) q.parentElement.classList.toggle('open');
+  });
+
+  // ===== ГОД =====
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
